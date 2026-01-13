@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url("");
+    background-image: url("../images/fondopag.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -58,6 +58,8 @@ header .logo {
     justify-content: center;
 }
 
+
+
 .nav-list {
     list-style: none;
     display: flex;
@@ -90,9 +92,9 @@ header .logo {
 
 .btnnav:hover {
     transition: .4s;
-    border: 3px dashed #8961f7ce;
-    background-color: #fff;
-    color: #3b09afa1;
+    border: 3px dashed #faf4a0f8;
+    background-color: #49484852;
+    color: #ffffff;
 }
 
 .btnnav:active {
@@ -114,13 +116,13 @@ header .logo {
 }
 
 .contenedor-principal {
-    background: rgba(15, 15, 25, 0.92);
+    background: rgba(25, 24, 15, 0.92);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 4rem;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
     margin-bottom: 2rem;
-    border: 1px solid rgba(167, 120, 255, 0.3);
+    border: 1px solid rgb(255, 255, 255);
     animation: fadeInUp 1s ease-out;
 }
 
@@ -142,7 +144,7 @@ header .logo {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #a778ff, #d4b3ff);
+    background: linear-gradient(135deg, #fcfa8e, #b3b49fb4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -157,7 +159,7 @@ header .logo {
 }
 
 .descripcion strong {
-    color: #b893ff;
+    color: #fff45d;
     font-weight: 600;
 }
 
@@ -168,34 +170,34 @@ header .logo {
     gap: 2rem;
     margin: 3rem 0;
     padding: 2rem 0;
-    border-top: 2px solid rgb(167, 120, 255);
-    border-bottom: 2px solid rgb(167, 120, 255);
+    border-top: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
 }
 
 .cuadro-estadistica {
     text-align: center;
     padding: 1.5rem;
-    background: rgba(76, 42, 230, 0.25);
+    background: rgba(230, 217, 42, 0.25);
     border-radius: 15px;
-    border: 2px solid rgba(167, 120, 255, 0.4);
+    border: 2px solid rgba(255, 246, 120, 0.4);
     transition: transform 0.3s ease;
 }
 
 .cuadro-estadistica:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(167, 120, 255, 0.3);
+    box-shadow: 0 15px 30px rgba(253, 255, 120, 0.3);
 }
 
 .cua-esta-numero {
     font-size: 3rem;
     font-weight: 700;
-    color: #a778ff;
+    color: #e6ff78;
     display: block;
 }
 
 .cua-esta-info {
     font-size: 1.1rem;
-    color: #c5b8e8;
+    color: #e6ff78;
     font-weight: 500;
     margin-top: 0.5rem;
 }
@@ -204,10 +206,10 @@ header .logo {
 .cuadro-final {
     text-align: center;
     padding: 3rem 2rem;
-    background: rgba(76, 42, 230, 0.3);
+    background: rgba(230, 217, 42, 0.25);
     border-radius: 15px;
     margin-top: 3rem;
-    border: 2px solid rgba(167, 120, 255, 0.4);
+    border: 2px solid rgba(255, 246, 120, 0.4);
 }
 
 .cuadro-final h3 {
@@ -217,7 +219,7 @@ header .logo {
 }
 
 .cuadro-final p {
-    color: #c5b8e8;
+    color: #f7fdd9;
     font-size: 1.2rem;
     margin-bottom: 2rem;
 }
