@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/fondoIndex.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+
+.menu-container {
+    background: linear-gradient(135deg, #ff9a76 0%, #f5c0a8 25%, #a8b8f5 50%, #8fa3e8 75%, #b8a3e8 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 50px 60px 40px rgba(0, 0, 0, 0.623);
+    border: none;
+    max-width: 500px;
+    width: 100%;
+}
+
+.logo {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.logo-at {
+    color: #ffffff;
+}
+
+.logo-knl {
+    color: #2d2d2d;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menu-btn {
+    background: rgba(255, 255, 255, 0.95);
+    color: #5a5a5a;
+    font-family: inherit;
+    padding: 1rem 2rem;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 12px;
+    border: none;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+.menu-btn:hover {
+    background: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    color: #2d2d2d;
+}
+
+.menu-btn:active {
+    transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+    .menu-container {
+        padding: 2rem;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    .menu-btn {
+        font-size: 16px;
+    }
+}
