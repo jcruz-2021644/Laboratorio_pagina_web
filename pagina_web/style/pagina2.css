@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url("");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    background-color: black;
+}
+
+/*Encabezado*/
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    color: #ffffff;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 50px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo:active {
+    letter-spacing: 0.4px;
+    transition: 0.1s all;
+    transform: translateY(-5px);
+    background: transparent;
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+
+.btnnav {
+    background-color: transparent;
+    padding: 15px 35px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 15px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 3px dashed transparent;
+    box-shadow: transparent 0px 2px 5px -1px, transparent 0px 1px 3px -1px;
+    transition: .4s;
+}
+
+.btnnav:hover {
+    transition: .4s;
+    border: 3px dashed #8961f7ce;
+    background-color: #fff;
+    color: #3b09afa1;
+}
+
+.btnnav:active {
+    letter-spacing: 0.4px;
+    transition: 0.1s all;
+    transform: translateY(-10px);
+    background: transparent;
+    color: white;
+}
+
+/* Contenido principal */
+.contenido-principal {
+    padding: 120px 50px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+    width: 100%;
+}
+
+.contenedor-principal {
+    background: rgba(15, 15, 25, 0.92);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 4rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+    border: 1px solid rgba(167, 120, 255, 0.3);
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.titulo-principal {
+    text-align: center;
+    color: #ffffff;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #a778ff, #d4b3ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.descripcion {
+    color: #e8e8f0;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.descripcion strong {
+    color: #b893ff;
+    font-weight: 600;
+}
+
+/* Las estadisticas */
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-top: 2px solid rgb(167, 120, 255);
+    border-bottom: 2px solid rgb(167, 120, 255);
+}
+
+.cuadro-estadistica {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(76, 42, 230, 0.25);
+    border-radius: 15px;
+    border: 2px solid rgba(167, 120, 255, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.cuadro-estadistica:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(167, 120, 255, 0.3);
+}
+
+.cua-esta-numero {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #a778ff;
+    display: block;
+}
+
+.cua-esta-info {
+    font-size: 1.1rem;
+    color: #c5b8e8;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+/* CTA Final */
+.cuadro-final {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: rgba(76, 42, 230, 0.3);
+    border-radius: 15px;
+    margin-top: 3rem;
+    border: 2px solid rgba(167, 120, 255, 0.4);
+}
+
+.cuadro-final h3 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.cuadro-final p {
+    color: #c5b8e8;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-contacto {
+    display: inline-block;
+    background: linear-gradient(135deg, #a778ff, #4c2ae6);
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(167, 120, 255, 0.4);
+}
+
+.btn-contacto:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(167, 120, 255, 0.6);
+    background: linear-gradient(135deg, #4c2ae6, #a778ff);
+}
+
+@media (max-width: 768px) {
+    .estadisticas {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 28px !important;
+        text-align: center;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .inicio,
+    .viajes,
+    .hoteles {
+        width: 100%;
+        text-align: center;
+        font-size: 13px;
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    .contenido-principal {
+        padding: 150px 15px 30px;
+    }
+
+    .contenedor-principal {
+        padding: 1.5rem;
+    }
+
+    .titulo-principal {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .descripcion {
+        font-size: 1rem;
+        text-align: justify;
+    }
+
+    .estadisticas {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .cuadro-estadistica {
+        padding: 1rem;
+    }
+
+    .cuadro-final {
+        padding: 2rem 1rem;
+    }
+
+    .cuadro-final h3 {
+        font-size: 1.6rem;
+    }
+
+    .cuadro-final p {
+        font-size: 1rem;
+    }
+
+    .btn-contacto {
+        font-size: 1rem;
+        padding: 12px 30px;
+        width: 100%;
+        max-width: 300px;
+    }
+}
