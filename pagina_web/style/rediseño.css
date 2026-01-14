@@ -288,13 +288,11 @@ header .logo {
     display: flex;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     gap: 0;
-    height: 550px;
-    /* Más alto */
+    height: 550px; /* Más alto */
 }
 
 .carrusel-card {
-    flex: 0 0 25%;
-    /* 4 cartas visibles por defecto */
+    flex: 0 0 25%; /* 4 cartas visibles por defecto */
     min-width: 0;
     position: relative;
     overflow: hidden;
@@ -304,8 +302,7 @@ header .logo {
 
 /* Efecto hover suave */
 .carrusel-card:hover {
-    flex: 0 0 35%;
-    /* Se expande más al hacer hover */
+    flex: 0 0 35%; /* Se expande más al hacer hover */
     z-index: 2;
 }
 
@@ -332,10 +329,12 @@ header .logo {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top,
-            rgba(26, 95, 122, 0.95) 0%,
-            rgba(81, 192, 243, 0.7) 50%,
-            rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(
+        to top,
+        rgba(26, 95, 122, 0.95) 0%,
+        rgba(81, 192, 243, 0.7) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -445,64 +444,6 @@ header .logo {
     background: rgba(81, 192, 243, 0.7);
 }
 
-/* Responsive */
-@media (max-width: 1200px) {
-    .carrusel-card {
-        flex: 0 0 33.333%;
-        /* 3 cartas en tablets grandes */
-    }
-
-    .carrusel-card:hover {
-        flex: 0 0 45%;
-    }
-}
-
-@media (max-width: 992px) {
-    .carrusel-container {
-        padding: 0 40px;
-    }
-
-    .carrusel-card {
-        flex: 0 0 50%;
-        /* 2 cartas en tablets */
-    }
-
-    .carrusel-card:hover {
-        flex: 0 0 60%;
-    }
-
-    .carrusel-track {
-        height: 500px;
-    }
-}
-
-@media (max-width: 768px) {
-    .carrusel-container {
-        padding: 0 20px;
-    }
-
-    .carrusel-card {
-        flex: 0 0 100%;
-        /* 1 carta en móviles */
-    }
-
-    .carrusel-card:hover {
-        flex: 0 0 100%;
-    }
-
-    .carrusel-track {
-        height: 450px;
-    }
-
-    .carrusel-card h3 {
-        font-size: 1.8rem;
-    }
-
-    .carrusel-btn {
-        width: 40px;
-        height: 40px;
-    }
-}
 
 /* ========== SECCIÓN DE VALORES ========== */
 .valores-grid {
@@ -654,51 +595,4 @@ header .logo {
         transform: translateY(0);
         visibility: visible;
     }
-}
-
-
-/* ========== ANIMACIONES ADICIONALES ========== */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.carrusel-card-content h3,
-.carrusel-card-content p {
-    animation: fadeInUp 0.6s ease backwards;
-}
-
-.carrusel-card-content p {
-    animation-delay: 0.1s;
-}
-
-.carrusel-card-content .carrusel-tag {
-    animation-delay: 0.2s;
-}
-
-/* Efecto de brillo en hover */
-.carrusel-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg,
-            transparent,
-            rgba(255, 255, 255, 0.2),
-            transparent);
-    transition: left 0.8s ease;
-    z-index: 1;
-}
-
-.carrusel-card:hover::before {
-    left: 100%;
 }
