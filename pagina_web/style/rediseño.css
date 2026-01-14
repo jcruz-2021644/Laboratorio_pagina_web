@@ -90,12 +90,13 @@ header .logo {
     padding: 100px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     background: #111;
     overflow: hidden;
+    padding-bottom: 200px;
 }
 
-/* BORDE CURVO INFERIOR (Como en tu imagen) */
+/* BORDE CURVO INFERIOR */
 .showcase::after {
     content: '';
     position: absolute;
@@ -105,7 +106,7 @@ header .logo {
     height: 150px;
     background: #fff;
     border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-    z-index: 10;
+    z-index: 5;
 }
 
 .showcase video {
@@ -130,9 +131,10 @@ header .logo {
 
 .text {
     position: relative;
-    z-index: 10;
+    z-index: 15;
     text-align: center;
     max-width: 900px;
+    margin-bottom: -150px;
 }
 
 .text h2 {
@@ -142,6 +144,7 @@ header .logo {
     line-height: 1.2em;
     text-transform: uppercase;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .text h3 {
@@ -150,6 +153,7 @@ header .logo {
     color: #51c0f3;
     line-height: 1.5em;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .text p {
@@ -158,6 +162,7 @@ header .logo {
     margin: 20px 0;
     font-weight: 400;
     line-height: 1.8;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .text a {
@@ -173,13 +178,14 @@ header .logo {
     letter-spacing: 2px;
     transition: 0.3s;
     border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(81, 192, 243, 0.4);
 }
 
 .text a:hover {
     background: #fff;
     color: #1a5f7a;
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(81, 192, 243, 0.4);
+    box-shadow: 0 10px 30px rgba(81, 192, 243, 0.6);
 }
 
 /* ========== SECCIONES DE CONTENIDO ========== */
@@ -199,6 +205,19 @@ header .logo {
     text-align: center;
     margin-bottom: 50px;
     text-transform: uppercase;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #51c0f3 0%, #1a5f7a 100%);
+    border-radius: 2px;
 }
 
 .section-content {
@@ -227,6 +246,7 @@ header .logo {
     transform: translateY(-10px);
     border: 2px solid #51c0f3;
     box-shadow: 0 10px 30px rgba(81, 192, 243, 0.3);
+    background: linear-gradient(135deg, #fff 0%, #f0f8ff 100%);
 }
 
 .card-item h3 {
@@ -243,8 +263,245 @@ header .logo {
 
 .card-item .icon {
     font-size: 3em;
-    color: #51c0f3;
     margin-bottom: 20px;
+    background: linear-gradient(135deg, #51c0f3 0%, #1a5f7a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ========== CARRUSEL MEJORADO ========== */
+.carrusel-container {
+    max-width: 1400px;
+    margin: 60px auto 0;
+    position: relative;
+    padding: 0 60px;
+}
+
+.carrusel-wrapper {
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(26, 95, 122, 0.2);
+}
+
+.carrusel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    gap: 0;
+    height: 550px;
+    /* Más alto */
+}
+
+.carrusel-card {
+    flex: 0 0 25%;
+    /* 4 cartas visibles por defecto */
+    min-width: 0;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+/* Efecto hover suave */
+.carrusel-card:hover {
+    flex: 0 0 35%;
+    /* Se expande más al hacer hover */
+    z-index: 2;
+}
+
+/* Imágenes de fondo con overlay azul */
+.carrusel-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+}
+
+.carrusel-card:hover .carrusel-card-bg {
+    transform: scale(1.1);
+}
+
+/* Overlay azul más pronunciado */
+.carrusel-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,
+            rgba(26, 95, 122, 0.95) 0%,
+            rgba(81, 192, 243, 0.7) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.carrusel-card:hover .carrusel-card-overlay {
+    opacity: 1;
+}
+
+/* Contenido de la tarjeta */
+.carrusel-card-content {
+    color: white;
+    transform: translateY(30px);
+    transition: transform 0.4s ease 0.1s;
+}
+
+.carrusel-card:hover .carrusel-card-content {
+    transform: translateY(0);
+}
+
+.carrusel-card h3 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.carrusel-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.carrusel-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Botones de navegación */
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(26, 95, 122, 0.9);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.carrusel-btn:hover {
+    background: #51c0f3;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+/* Indicadores */
+.carrusel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.carrusel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(26, 95, 122, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carrusel-indicator.active {
+    background: #51c0f3;
+    transform: scale(1.2);
+}
+
+.carrusel-indicator:hover {
+    background: rgba(81, 192, 243, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .carrusel-card {
+        flex: 0 0 33.333%;
+        /* 3 cartas en tablets grandes */
+    }
+
+    .carrusel-card:hover {
+        flex: 0 0 45%;
+    }
+}
+
+@media (max-width: 992px) {
+    .carrusel-container {
+        padding: 0 40px;
+    }
+
+    .carrusel-card {
+        flex: 0 0 50%;
+        /* 2 cartas en tablets */
+    }
+
+    .carrusel-card:hover {
+        flex: 0 0 60%;
+    }
+
+    .carrusel-track {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carrusel-container {
+        padding: 0 20px;
+    }
+
+    .carrusel-card {
+        flex: 0 0 100%;
+        /* 1 carta en móviles */
+    }
+
+    .carrusel-card:hover {
+        flex: 0 0 100%;
+    }
+
+    .carrusel-track {
+        height: 450px;
+    }
+
+    .carrusel-card h3 {
+        font-size: 1.8rem;
+    }
+
+    .carrusel-btn {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 /* ========== SECCIÓN DE VALORES ========== */
@@ -258,11 +515,22 @@ header .logo {
 .valor-item {
     text-align: center;
     padding: 30px;
+    transition: 0.3s;
+    border-radius: 15px;
+}
+
+.valor-item:hover {
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f7ff 100%);
+    box-shadow: 0 5px 20px rgba(81, 192, 243, 0.2);
 }
 
 .valor-item .icon {
     font-size: 4em;
     margin-bottom: 20px;
+    background: linear-gradient(135deg, #51c0f3 0%, #1a5f7a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .valor-item h3 {
@@ -290,6 +558,10 @@ header .logo {
     margin-bottom: 30px;
 }
 
+.contacto h2::after {
+    background: #fff;
+}
+
 .social-links {
     display: flex;
     justify-content: center;
@@ -309,14 +581,15 @@ header .logo {
     text-decoration: none;
     color: #fff;
     font-size: 24px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .social-link:hover {
     background: #fff;
     color: #1a5f7a;
     transform: scale(1.2) rotate(360deg);
+    border: 2px solid #fff;
 }
-
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
@@ -335,6 +608,7 @@ header .logo {
 
     .showcase {
         padding: 40px 20px;
+        padding-bottom: 150px;
     }
 
     .text h2 {
@@ -357,4 +631,74 @@ header .logo {
     .valores-grid {
         grid-template-columns: 1fr;
     }
+
+    /* Carrusel responsive */
+    .team-slider {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+
+    .team-card {
+        flex: 1 1 250px;
+        width: 100%;
+        min-height: 250px;
+    }
+
+    .team-card:hover {
+        flex: 1 1 300px;
+    }
+
+    .team-card-content {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+}
+
+
+/* ========== ANIMACIONES ADICIONALES ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.carrusel-card-content h3,
+.carrusel-card-content p {
+    animation: fadeInUp 0.6s ease backwards;
+}
+
+.carrusel-card-content p {
+    animation-delay: 0.1s;
+}
+
+.carrusel-card-content .carrusel-tag {
+    animation-delay: 0.2s;
+}
+
+/* Efecto de brillo en hover */
+.carrusel-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent);
+    transition: left 0.8s ease;
+    z-index: 1;
+}
+
+.carrusel-card:hover::before {
+    left: 100%;
 }
