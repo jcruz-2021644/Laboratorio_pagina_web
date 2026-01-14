@@ -9,7 +9,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* ========== HEADER ========== */
+/* encabezado */
 header {
     position: fixed;
     top: 0;
@@ -82,7 +82,7 @@ header .logo {
     color: #51c0f3;
 }
 
-/* ========== SECCIÓN HERO CON BORDE CURVO ========== */
+/* el hero pero con el borde curvo */
 .showcase {
     position: relative;
     width: 100%;
@@ -96,7 +96,7 @@ header .logo {
     padding-bottom: 200px;
 }
 
-/* BORDE CURVO INFERIOR */
+/* el borde de nuestro video*/
 .showcase::after {
     content: '';
     position: absolute;
@@ -128,7 +128,7 @@ header .logo {
     background: #ffffff9f;
     mix-blend-mode: overlay;
 }
-
+/*boton arriba del showcase*/
 .text {
     position: relative;
     z-index: 15;
@@ -188,7 +188,7 @@ header .logo {
     box-shadow: 0 10px 30px rgba(81, 192, 243, 0.6);
 }
 
-/* ========== SECCIONES DE CONTENIDO ========== */
+/* toda la parte del contenido sobbre nosotros */
 .section {
     padding: 100px 10%;
     background: #fff;
@@ -225,52 +225,113 @@ header .logo {
     margin: 0 auto;
 }
 
-/* ========== GRID DE PROGRAMAS ========== */
+
+.section-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/*parte donde dice quienes somos*/
+.section-badge {
+    display: inline-block;
+    padding: 8px 24px;
+    background: linear-gradient(135deg, #e6f7ff 0%, #b3e5fc 100%);
+    color: #1a5f7a;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: 2px solid rgba(81, 192, 243, 0.3);
+}
+
+.section-badge.light {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+/* Todos los programas*/
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
     margin-top: 50px;
 }
-
+/*bloque de la carta*/
 .card-item {
     background: #fff;
-    padding: 30px;
-    border-radius: 15px;
+    padding: 40px;
+    border-radius: 20px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
+    transition: 0.4s;
     border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+/*el color de la capa para el fondo del card-item*/
+.card-item::before {
+    content: '';
+    position: absolute;
+    top: -150%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(135deg, transparent, rgba(243, 178, 81, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: 0.6s;
+}
+
+.card-item:hover::before {
+    top: -100%;
+    right: -100%;
 }
 
 .card-item:hover {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
     border: 2px solid #51c0f3;
-    box-shadow: 0 10px 30px rgba(81, 192, 243, 0.3);
+    box-shadow: 0 15px 40px rgba(81, 192, 243, 0.4);
     background: linear-gradient(135deg, #fff 0%, #f0f8ff 100%);
+}
+
+/*icono de la carta*/
+.card-item .icon {
+    font-size: 3.5em;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, #51c0f3 0%, #1a5f7a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    transition: 0.3s;
+}
+
+.card-item:hover .icon {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .card-item h3 {
     font-size: 1.8em;
     color: #1a5f7a;
     margin-bottom: 15px;
+    font-weight: 700;
 }
 
 .card-item p {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    color: #000000;
+    line-height: 1.8;
+    margin-bottom: 0;
+    font-size: 1.05em;
 }
 
-.card-item .icon {
-    font-size: 3em;
-    margin-bottom: 20px;
-    background: linear-gradient(135deg, #51c0f3 0%, #1a5f7a 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* ========== CARRUSEL MEJORADO ========== */
+/*el carrusel*/
 .carrusel-container {
     max-width: 1400px;
     margin: 60px auto 0;
@@ -288,11 +349,11 @@ header .logo {
     display: flex;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     gap: 0;
-    height: 550px; /* Más alto */
+    height: 550px;
 }
 
 .carrusel-card {
-    flex: 0 0 25%; /* 4 cartas visibles por defecto */
+    flex: 0 0 25%;
     min-width: 0;
     position: relative;
     overflow: hidden;
@@ -300,13 +361,13 @@ header .logo {
     cursor: pointer;
 }
 
-/* Efecto hover suave */
+
 .carrusel-card:hover {
-    flex: 0 0 35%; /* Se expande más al hacer hover */
+    flex: 0 0 35%;
+    
     z-index: 2;
 }
 
-/* Imágenes de fondo con overlay azul */
 .carrusel-card-bg {
     position: absolute;
     top: 0;
@@ -329,12 +390,10 @@ header .logo {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        to top,
-        rgba(26, 95, 122, 0.95) 0%,
-        rgba(81, 192, 243, 0.7) 50%,
-        rgba(255, 255, 255, 0) 100%
-    );
+    background: linear-gradient(to top,
+            rgba(26, 95, 122, 0.95) 0%,
+            rgba(81, 192, 243, 0.7) 50%,
+            rgba(255, 255, 255, 0) 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
