@@ -332,177 +332,139 @@ header .logo {
 }
 
 /*el carrusel*/
-.carrusel-container {
-    max-width: 1400px;
-    margin: 60px auto 0;
-    position: relative;
-    padding: 0 60px;
-}
-
-.carrusel-wrapper {
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(26, 95, 122, 0.2);
-}
-
-.carrusel-track {
-    display: flex;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    gap: 0;
-    height: 550px;
-}
-
-.carrusel-card {
-    flex: 0 0 25%;
-    min-width: 0;
+.carreras-section {
+    background: linear-gradient(135deg, #f0f8ff 0%, #fff 50%, #f0f8ff 100%);
     position: relative;
     overflow: hidden;
-    transition: all 0.4s ease;
-    cursor: pointer;
 }
 
-
-.carrusel-card:hover {
-    flex: 0 0 35%;
-    
-    z-index: 2;
-}
-
-.carrusel-card-bg {
+.carreras-section::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(81, 192, 243, 0.1), transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(26, 95, 122, 0.1), transparent 50%);
+    pointer-events: none;
+}
+
+.carreras-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+.team-slider {
+    display: flex;
+    gap: 25px;
+    margin-top: 60px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 500px;
+    position: relative;
+}
+
+.team-card {
+    flex: 1;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a5f7a 0%, #51c0f3 100%);
+    box-shadow: 0 10px 30px rgba(26, 95, 122, 0.3);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+}
+
+
+.team-card {
     background-size: cover;
     background-position: center;
-    transition: transform 0.6s ease;
+    background-repeat: no-repeat;
 }
 
-.carrusel-card:hover .carrusel-card-bg {
-    transform: scale(1.1);
+
+.team-card.Electronica {
+    background-image: url("../images/Electronica.png");
 }
 
-/* Overlay azul más pronunciado */
-.carrusel-card-overlay {
+.team-card.Informatica {
+    background-image: url("../images/Informatica.png");
+}
+
+.team-card.Mecanica {
+    background-image: url("../images/Mecanica.png");
+}
+
+.team-card.Electricidad {
+    background-image: url("../images/Electricidad.png");
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)" /></svg>');
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.team-card:hover {
+    flex: 1.5;
+    box-shadow: 0 20px 50px rgba(81, 192, 243, 0.5);
+    z-index: 2;
+}
+
+.team-card-content {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top,
-            rgba(26, 95, 122, 0.95) 0%,
-            rgba(81, 192, 243, 0.7) 50%,
-            rgba(255, 255, 255, 0) 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 40px;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.carrusel-card:hover .carrusel-card-overlay {
-    opacity: 1;
-}
-
-/* Contenido de la tarjeta */
-.carrusel-card-content {
-    color: white;
-    transform: translateY(30px);
-    transition: transform 0.4s ease 0.1s;
-}
-
-.carrusel-card:hover .carrusel-card-content {
-    transform: translateY(0);
-}
-
-.carrusel-card h3 {
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.carrusel-card p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    opacity: 0.9;
-}
-
-.carrusel-tag {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 8px 20px;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Botones de navegación */
-.carrusel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    background: rgba(26, 95, 122, 0.9);
-    border: none;
-    border-radius: 50%;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-}
-
-.carrusel-btn:hover {
-    background: #51c0f3;
-    transform: translateY(-50%) scale(1.1);
-}
-
-.prev-btn {
-    left: 0;
-}
-
-.next-btn {
     right: 0;
+    padding: 40px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: #fff;
+    z-index: 2;
+    transform: translateY(20px);
+    opacity: 0.9;
+    transition: all 0.4s ease;
 }
 
-/* Indicadores */
-.carrusel-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 30px;
+.team-card:hover .team-card-content {
+    transform: translateY(0);
+    opacity: 1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.3));
 }
 
-.carrusel-indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(26, 95, 122, 0.3);
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 0;
+.team-card-content h2 {
+    font-size: 2em;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #fff;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.carrusel-indicator.active {
-    background: #51c0f3;
-    transform: scale(1.2);
+.team-card-content h2::after {
+    display: none;
 }
 
-.carrusel-indicator:hover {
-    background: rgba(81, 192, 243, 0.7);
+.team-card-content span {
+    font-size: 1.1em;
+    opacity: 0.9;
+    display: block;
+    color: #51c0f3;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
-
 
 /* ========== SECCIÓN DE VALORES ========== */
 .valores-grid {
