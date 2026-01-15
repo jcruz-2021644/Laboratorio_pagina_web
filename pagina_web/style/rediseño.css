@@ -20,13 +20,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(43, 78, 126, 0.3);
     backdrop-filter: blur(10px);
     transition: all 0.3s;
 }
 
 header.scrolled {
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(43, 78, 126, 0.95);
     padding: 15px 100px;
 }
 
@@ -77,9 +77,9 @@ header .logo {
 }
 
 .nav-list li a:hover {
-    border: 2px solid #51c0f3;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #51c0f3;
+    border: 2px solid #FF9933;
+    background-color: rgba(255, 153, 51, 0.1);
+    color: #FF9933;
 }
 
 /* el hero pero con el borde curvo */
@@ -91,7 +91,7 @@ header .logo {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    background: #111;
+    background: #1a2332;
     overflow: hidden;
     padding-bottom: 200px;
 }
@@ -125,7 +125,7 @@ header .logo {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #ffffff9f;
+    background: #3969ad57;
     mix-blend-mode: overlay;
 }
 
@@ -151,7 +151,7 @@ header .logo {
 .text h3 {
     font-size: 2em;
     font-weight: 600;
-    color: #51c0f3;
+    color: #FF9933;
     line-height: 1.5em;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -169,7 +169,7 @@ header .logo {
 .text a {
     display: inline-block;
     font-size: 1em;
-    background: #51c0f3;
+    background: linear-gradient(135deg, #3341ff 0%, #58acc5 100%);
     padding: 15px 40px;
     text-transform: uppercase;
     text-decoration: none;
@@ -179,14 +179,14 @@ header .logo {
     letter-spacing: 2px;
     transition: 0.3s;
     border-radius: 50px;
-    box-shadow: 0 5px 15px rgba(81, 192, 243, 0.4);
+    box-shadow: 0 5px 15px rgba(51, 241, 255, 0.6);
 }
 
 .text a:hover {
-    background: #fff;
-    color: #1a5f7a;
+    background: linear-gradient(135deg, #58acc5 0%, #3341ff 100%);
+    color: #fff;
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(81, 192, 243, 0.6);
+    box-shadow: 0 10px 30px rgba(51, 241, 255, 0.6);
 }
 
 /* toda la parte del contenido sobbre nosotros */
@@ -197,12 +197,12 @@ header .logo {
 }
 
 .section.dark {
-    background: #f5f5f5;
+    background: #f8f9fa;
 }
 
 .section h2 {
     font-size: 3em;
-    color: #1a5f7a;
+    color: #2B4E7E;
     text-align: center;
     margin-bottom: 50px;
     text-transform: uppercase;
@@ -217,7 +217,7 @@ header .logo {
     transform: translateX(-50%);
     width: 100px;
     height: 4px;
-    background: linear-gradient(90deg, #51c0f3 0%, #1a5f7a 100%);
+    background: linear-gradient(90deg, #FF9933 0%, #C5B358 100%);
     border-radius: 2px;
 }
 
@@ -241,15 +241,15 @@ header .logo {
 .section-badge {
     display: inline-block;
     padding: 8px 24px;
-    background: linear-gradient(135deg, #e6f7ff 0%, #b3e5fc 100%);
-    color: #1a5f7a;
+    background: linear-gradient(135deg, #fff5e6 0%, #ffe6cc 100%);
+    color: #2B4E7E;
     font-size: 0.9rem;
     font-weight: 600;
     border-radius: 50px;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    border: 2px solid rgba(81, 192, 243, 0.3);
+    border: 2px solid rgba(255, 153, 51, 0.3);
 }
 
 .section-badge.light {
@@ -258,6 +258,7 @@ header .logo {
     border: 2px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(10px);
 }
+
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -269,7 +270,7 @@ header .logo {
 .about-content .about-lead {
     font-size: 1.4em;
     font-weight: 600;
-    color: #1a5f7a;
+    color: #2B4E7E;
     margin-bottom: 25px;
     line-height: 1.5;
 }
@@ -291,23 +292,23 @@ header .logo {
 .stat-item {
     text-align: center;
     padding: 20px 30px;
-    background: linear-gradient(135deg, #f0f8ff 0%, #e6f7ff 100%);
+    background: linear-gradient(135deg, #fff5e6 0%, #fffbf0 100%);
     border-radius: 15px;
-    border: 2px solid rgba(81, 192, 243, 0.2);
+    border: 2px solid rgba(255, 153, 51, 0.2);
     transition: 0.3s;
 }
 
 .stat-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(81, 192, 243, 0.3);
-    border-color: #51c0f3;
+    box-shadow: 0 10px 25px rgba(255, 153, 51, 0.3);
+    border-color: #FF9933;
 }
 
 .stat-number {
     display: block;
     font-size: 3em;
     font-weight: 800;
-    background: linear-gradient(135deg, #51c0f3 0%, #1a5f7a 100%);
+    background: linear-gradient(135deg, #FF9933 0%, #C5B358 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -327,7 +328,7 @@ header .logo {
 .about-image {
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(26, 95, 122, 0.3);
+    box-shadow: 0 20px 50px rgba(43, 78, 126, 0.3);
     position: relative;
 }
 
@@ -335,7 +336,7 @@ header .logo {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(81, 192, 243, 0.3), rgba(26, 95, 122, 0.3));
+    background: linear-gradient(135deg, rgba(137, 212, 255, 0.3), rgba(88, 190, 197, 0.171));
     z-index: 1;
     opacity: 0;
     transition: 0.3s;
@@ -384,7 +385,7 @@ header .logo {
     right: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(135deg, transparent, rgba(243, 178, 81, 0.1), transparent);
+    background: linear-gradient(135deg, transparent, rgba(255, 153, 51, 0.1), transparent);
     transform: rotate(45deg);
     transition: 0.6s;
 }
@@ -396,16 +397,16 @@ header .logo {
 
 .card-item:hover {
     transform: translateY(-15px);
-    border: 2px solid #51c0f3;
-    box-shadow: 0 15px 40px rgba(81, 192, 243, 0.4);
-    background: linear-gradient(135deg, #fff 0%, #f0f8ff 100%);
+    border: 2px solid #FF9933;
+    box-shadow: 0 15px 40px rgba(255, 153, 51, 0.4);
+    background: linear-gradient(135deg, #fff 0%, #fff5e6 100%);
 }
 
 /*icono de la carta*/
 .card-item .icon {
     font-size: 3.5em;
     margin-bottom: 25px;
-    background: linear-gradient(135deg, #51c0f3 0%, #1a5f7a 100%);
+    background: linear-gradient(135deg, #FF9933 0%, #C5B358 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -419,7 +420,7 @@ header .logo {
 
 .card-item h3 {
     font-size: 1.8em;
-    color: #1a5f7a;
+    color: #2B4E7E;
     margin-bottom: 15px;
     font-weight: 700;
 }
@@ -431,9 +432,19 @@ header .logo {
     font-size: 1.05em;
 }
 
+/*los svg*/
+.card-item .icon svg,
+.valor-item .icon svg {
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin: 0 auto 25px;
+    transition: all 0.3s ease;
+}
+
 /*el carrusel*/
 .carreras-section {
-    background: linear-gradient(135deg, #f0f8ff 0%, #fff 50%, #f0f8ff 100%);
+    background: linear-gradient(135deg, #fff5e6 0%, #fff 50%, #fffbf0 100%);
     position: relative;
     overflow: hidden;
 }
@@ -445,8 +456,8 @@ header .logo {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 20% 50%, rgba(81, 192, 243, 0.1), transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(26, 95, 122, 0.1), transparent 50%);
+    background: radial-gradient(circle at 20% 50%, rgba(255, 153, 51, 0.1), transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(197, 179, 88, 0.1), transparent 50%);
     pointer-events: none;
 }
 
@@ -477,8 +488,8 @@ header .logo {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-    background: linear-gradient(135deg, #1a5f7a 0%, #51c0f3 100%);
-    box-shadow: 0 10px 30px rgba(26, 95, 122, 0.3);
+    background: linear-gradient(135deg, #2B4E7E 0%, #FF9933 100%);
+    box-shadow: 0 10px 30px rgba(43, 78, 126, 0.3);
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
 }
@@ -518,7 +529,7 @@ header .logo {
 
 .team-card:hover {
     flex: 1.5;
-    box-shadow: 0 20px 50px rgba(81, 192, 243, 0.5);
+    box-shadow: 0 20px 50px rgba(255, 153, 51, 0.5);
     z-index: 2;
 }
 
@@ -528,7 +539,7 @@ header .logo {
     left: 0;
     right: 0;
     padding: 40px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    background: linear-gradient(to top, rgba(43, 78, 126, 0.9), transparent);
     color: #fff;
     z-index: 2;
     transform: translateY(20px);
@@ -539,7 +550,7 @@ header .logo {
 .team-card:hover .team-card-content {
     transform: translateY(0);
     opacity: 1;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.3));
+    background: linear-gradient(to top, rgba(43, 78, 126, 0.95), rgba(43, 78, 126, 0.3));
 }
 
 .team-card-content h2 {
@@ -560,7 +571,7 @@ header .logo {
     font-size: 1.1em;
     opacity: 0.9;
     display: block;
-    color: #51c0f3;
+    color: #FF9933;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -580,7 +591,7 @@ header .logo {
     transition: 0.4s;
     border-radius: 20px;
     background: #fff;
-    border: 2px solid #51c0f36e;
+    border: 2px solid rgba(255, 153, 51, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -592,7 +603,7 @@ header .logo {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(81, 192, 243, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 153, 51, 0.1), transparent);
     transition: 0.6s;
 }
 
@@ -601,16 +612,16 @@ header .logo {
 }
 
 .valor-item:hover {
-    background: linear-gradient(135deg, #f0f8ff 0%, #e6f7ff 100%);
-    box-shadow: 0 10px 30px rgba(81, 192, 243, 0.3);
+    background: linear-gradient(135deg, #fff5e6 0%, #fffbf0 100%);
+    box-shadow: 0 10px 30px rgba(255, 153, 51, 0.3);
     transform: translateY(-10px);
-    border: 2px solid #51c0f3;
+    border: 2px solid #FF9933;
 }
 
 .valor-item .icon {
     font-size: 4.5em;
     margin-bottom: 25px;
-    background: linear-gradient(135deg, #51c0f3 0%, #1a5f7a 100%);
+    background: linear-gradient(135deg, #FF9933 0%, #C5B358 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -624,7 +635,7 @@ header .logo {
 
 .valor-item h3 {
     font-size: 1.6em;
-    color: #1a5f7a;
+    color: #2B4E7E;
     margin-bottom: 15px;
     font-weight: 700;
     text-transform: uppercase;
@@ -639,7 +650,7 @@ header .logo {
 
 /* seccion contacto */
 .section-contact {
-    background: linear-gradient(135deg, #1a5f7a 0%, #51c0f3 100%);
+    background: linear-gradient(135deg, #2B4E7E 0%, #3d5a80 100%);
     color: #fff;
     position: relative;
     overflow: hidden;
@@ -652,7 +663,7 @@ header .logo {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)" /></svg>');
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="rgba(255,153,51,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)" /></svg>');
     opacity: 0.5;
 }
 
@@ -663,7 +674,7 @@ header .logo {
 }
 
 .section-contact h2::after {
-    background: #fff;
+    background: linear-gradient(90deg, #FF9933 0%, #C5B358 100%);
 }
 
 .contact-grid {
@@ -696,13 +707,14 @@ header .logo {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 153, 51, 0.2);
     transition: 0.3s;
 }
 
 .contact-item:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 153, 51, 0.15);
     transform: translateX(10px);
+    border: 1px solid rgba(255, 153, 51, 0.4);
 }
 
 .contact-item svg {
@@ -718,7 +730,7 @@ header .logo {
 .social-link {
     width: 60px;
     height: 60px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 153, 51, 0.2);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -726,16 +738,16 @@ header .logo {
     transition: 0.4s;
     text-decoration: none;
     color: #fff;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 153, 51, 0.3);
     backdrop-filter: blur(10px);
 }
 
 .social-link:hover {
-    background: #fff;
-    color: #1a5f7a;
+    background: linear-gradient(135deg, #FF9933 0%, #C5B358 100%);
+    color: #fff;
     transform: scale(1.15) rotate(360deg);
-    border: 2px solid #fff;
-    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+    border: 2px solid #FF9933;
+    box-shadow: 0 5px 20px rgba(255, 153, 51, 0.5);
 }
 
 .contact-form {
@@ -754,7 +766,7 @@ header .logo {
     display: block;
     font-size: 0.95em;
     font-weight: 600;
-    color: #1a5f7a;
+    color: #2B4E7E;
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -766,7 +778,7 @@ header .logo {
     padding: 15px 18px;
     font-size: 1em;
     font-family: inherit;
-    border: 2px solid rgba(26, 95, 122, 0.2);
+    border: 2px solid rgba(43, 78, 126, 0.2);
     border-radius: 10px;
     transition: 0.3s;
     background: #fff;
@@ -776,8 +788,8 @@ header .logo {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #51c0f3;
-    box-shadow: 0 0 0 4px rgba(81, 192, 243, 0.1);
+    border-color: #FF9933;
+    box-shadow: 0 0 0 4px rgba(255, 153, 51, 0.1);
     transform: translateY(-2px);
 }
 
@@ -787,7 +799,7 @@ header .logo {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #51c0f3 0%, #1a5f7a 100%);
+    background: linear-gradient(135deg, #FF9933 0%, #C5B358 100%);
     color: #fff;
     border: none;
     padding: 16px 40px;
@@ -798,13 +810,13 @@ header .logo {
     transition: 0.4s;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    box-shadow: 0 5px 20px rgba(81, 192, 243, 0.4);
+    box-shadow: 0 5px 20px rgba(255, 153, 51, 0.4);
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #1a5f7a 0%, #51c0f3 100%);
+    background: linear-gradient(135deg, #C5B358 0%, #FF9933 100%);
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(81, 192, 243, 0.5);
+    box-shadow: 0 10px 30px rgba(255, 153, 51, 0.6);
 }
 
 .btn-full {
@@ -815,7 +827,7 @@ header .logo {
 /*pie de pagina*/
 
 .footer {
-    background: linear-gradient(135deg, #0d1b2a 0%, #1a5f7a 100%);
+    background: linear-gradient(135deg, #1a2332 0%, #2B4E7E 100%);
     color: #9ca3af;
     padding: 60px 5% 0;
     position: relative;
@@ -829,7 +841,7 @@ header .logo {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid2" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(81,192,243,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid2)" /></svg>');
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid2" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,153,51,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid2)" /></svg>');
     opacity: 0.5;
 }
 
@@ -859,7 +871,7 @@ header .logo {
 .logo-icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #51c0f3 0%, #1a5f7a 100%);
+    background: linear-gradient(135deg, #FF9933 0%, #C5B358 100%);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -867,7 +879,7 @@ header .logo {
     font-size: 1.8rem;
     font-weight: 700;
     color: #fff;
-    box-shadow: 0 5px 15px rgba(81, 192, 243, 0.3);
+    box-shadow: 0 5px 15px rgba(255, 153, 51, 0.3);
 }
 
 .logo-text {
@@ -909,7 +921,7 @@ header .logo {
     left: 0;
     width: 40px;
     height: 3px;
-    background: linear-gradient(90deg, #51c0f3 0%, transparent 100%);
+    background: linear-gradient(90deg, #FF9933 0%, transparent 100%);
     border-radius: 2px;
 }
 
@@ -933,11 +945,11 @@ header .logo {
     left: -20px;
     opacity: 0;
     transition: 0.3s;
-    color: #51c0f3;
+    color: #FF9933;
 }
 
 .footer-column a:hover {
-    color: #51c0f3;
+    color: #FF9933;
     padding-left: 20px;
 }
 
