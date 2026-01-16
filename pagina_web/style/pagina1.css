@@ -69,7 +69,7 @@ header .logo {
 }
 
 
-.btnnav{
+.btnnav {
     background-color: transparent;
     padding: 15px 35px;
     margin: 10px;
@@ -243,11 +243,40 @@ header .logo {
     background: linear-gradient(135deg, #4c2ae6, #a778ff);
 }
 
+.galeria-moto {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* espacio entre las fotos */
+    margin: 40px 0;
+    /* espacio arriba y abajo */
+}
+
+.galeria-moto img {
+    width: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 3px solid #a778ff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-moto img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(167, 120, 255, 0.3);
+}
+
 @media (max-width: 768px) {
     .estadisticas {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 1rem;
     }
+
+    .galeria-moto {
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
 
 @media (max-width: 480px) {
