@@ -972,7 +972,11 @@ header .logo {
     z-index: 1;
 }
 
-
+#redisenio .section-content p {
+    font-size: 1.3rem;
+    color: #000000;
+    margin-bottom: 1.5rem;
+}
 
 /* ========== RESPONSIVE ========== */
 
